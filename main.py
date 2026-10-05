@@ -12,4 +12,23 @@ def rotate(side,ccc):
     cubeT = cube.copy()
     if side == 1:
         if ccc == 'c':
-            cubeT[1][0][2] = cube[3][0][2]  #top right white side should be from top right green side
+            cube[1][0][2] = cubeT[3][0][2]  #White from Green
+            cube[1][1][2] = cubeT[3][1][2]
+            cube[1][2][2] = cubeT[3][2][2]
+            cube[3][0][2] = cubeT[4][0][2]  #Green from Yellow
+            cube[3][1][2] = cubeT[4][1][2]
+            cube[3][2][2] = cubeT[4][2][2]
+            cube[4][0][2] = cubeT[5][0][2]  #Yellow from Orange
+            cube[4][1][2] = cubeT[5][1][2]
+            cube[4][2][2] = cubeT[5][2][2]
+            cube[5][0][2] = cubeT[1][0][2]  #Orange from White
+            cube[5][1][2] = cubeT[1][1][2]
+            cube[5][2][2] = cubeT[1][2][2]
+            cube[2][0][0] = cubeT[2][2][0]  #Red from Red
+            cube[2][0][1] = cubeT[2][1][0]
+            cube[2][0][2] = cubeT[2][0][0]
+            cube[2][1][0] = cubeT[2][2][1]
+            cube[2][1][2] = cubeT[2][1][1]
+            cube[2][2][0] = cubeT[2][2][2]
+            cube[2][2][1] = cubeT[2][1][2]
+            cube[2][2][2] = cubeT[2][0][2]
