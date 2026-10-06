@@ -1,5 +1,6 @@
 import copy
 import tkinter as tk
+from extra_code.display import rectangles
 
 cube = {
     1: [['W','W','W'],['W','W','W'],['W','W','W']],    
@@ -12,7 +13,10 @@ cube = {
 
 root = tk.Tk()
 root.title("Rubik's Cube")
+root.geometry('400x300')
 canvas = tk.Canvas(root)
+display = rectangles(canvas)
+canvas.pack()
 
 def rotate(side,ccc):
     global cube
@@ -47,4 +51,20 @@ def rotate(side,ccc):
             cube[1][2][2] = cubeT[6][2][2]
             cube[2] = [list(row) for row in zip(*cubeT[2])][::-1]
 
+    colors = {
+        'W': 'white',
+        'R': 'red',
+        'G': 'green',
+        'Y': 'yellow',
+        'O': 'orange',
+        'B': 'blue'
+    }
+    for face, id in display.items():
+        for row in range(3):
+            for col in range(3):
+                colr = colors[cube[face][row][col]]
+                canvas.itemconfig(id[row * 3 + col], fill=colr)
+
+rotate(None,None)
+root.bind('<Return>', lambda event:rotate(2, 'cc'))
 root.mainloop()
