@@ -16,7 +16,9 @@ root.title("Rubik's Cube")
 root.geometry('400x300')
 canvas = tk.Canvas(root)
 display = rectangles(canvas)
+switchbutton = tk.Button(root, text="Flip", command=lambda: dtswitch())
 canvas.pack()
+switchbutton.pack(pady=10)
 dt = 1
 
 def rotate(side,ccc):
@@ -113,5 +115,4 @@ def dtswitch():
 rotate(None,None)
 root.bind('<q>', lambda event:rotate(2, 'cc'))
 root.bind('<w>', lambda event:rotate(2, 'c'))
-root.bind('<space>', lambda event: dtswitch())
 root.mainloop()
