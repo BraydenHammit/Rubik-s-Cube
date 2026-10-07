@@ -1,4 +1,5 @@
-import copy
+import copy as c
+import random as ran
 import tkinter as tk
 from extra_code.display import rectangles
 
@@ -23,7 +24,7 @@ dt = 1
 
 def rotate(side,ccc):
     global cube
-    cubeT = copy.deepcopy(cube)
+    cubeT = c.deepcopy(cube)
     if side == 2:
         if ccc == 'c':
             cube[1][0][2] = cubeT[3][0][2]  #White from Green
@@ -111,6 +112,10 @@ def dtswitch():
     elif dt == 2:
         dt = 1
     rotate(None,None)
+
+def shuffle():
+    for _ in range(100):
+        rotate(ran.randint(1, 6), ran.choice(['c', 'cc']))
 
 rotate(None,None)
 root.bind('<q>', lambda event:rotate(2, 'cc'))
