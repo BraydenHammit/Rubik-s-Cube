@@ -89,11 +89,13 @@ def rotate(side,ccc):
                 face = 6
         for row in range(3):
             for col in range(3):
-                if dt == 1:
-                    source_col = 2 - col
+                if face == 4:
+                    row2 = col
+                    col2 = 2 - row
                 else:
-                    source_col = -3 + col
-                colr = colors[cube[face][row][source_col]]
+                    row2 = row
+                    col2 = col
+                colr = colors[cube[face][row2][col2]]
                 if dt == 1:
                     canvas.itemconfig(id[row * 3 + col], fill=colr)
                 if dt == 2:
