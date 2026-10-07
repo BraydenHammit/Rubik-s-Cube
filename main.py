@@ -70,14 +70,20 @@ def rotate(side,ccc):
             if face == 1:
                 face = 4
             elif face == 2:
-                face = 6
-            elif face == 3:
                 face = 5
+            elif face == 3:
+                face = 6
         for row in range(3):
             for col in range(3):
-                source_col = 2 - col if dt == 2 else col
+                if dt == 1:
+                    source_col = 2 - col
+                else:
+                    source_col = col
                 colr = colors[cube[face][row][source_col]]
-                canvas.itemconfig(id[row * 3 + col], fill=colr)
+                if dt == 1:
+                    canvas.itemconfig(id[row * 3 + col], fill=colr)
+                if dt == 2:
+                    canvas.itemconfig(id[row * -3 + col], fill=colr)
 
 
 def dtswitch():
