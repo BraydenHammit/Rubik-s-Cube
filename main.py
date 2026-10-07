@@ -36,7 +36,14 @@ def rotate(side,ccc):
             cube[6][0][2] = cubeT[1][0][2]  #Blue from White
             cube[6][1][2] = cubeT[1][1][2]
             cube[6][2][2] = cubeT[1][2][2]
-            cube[2] = [list(row) for row in zip(*cubeT[2][::-1])]
+            cube[2][0][0] = cubeT[2][2][0]  #Red from Red
+            cube[2][0][1] = cubeT[2][1][0]
+            cube[2][0][2] = cubeT[2][0][0]
+            cube[2][1][0] = cubeT[2][2][1]
+            cube[2][1][2] = cubeT[2][1][1]
+            cube[2][2][0] = cubeT[2][2][2]
+            cube[2][2][1] = cubeT[2][1][2]
+            cube[2][2][2] = cubeT[2][0][2]
         if ccc == 'cc':
             cube[3][0][2] = cubeT[1][0][2]  #Green from White
             cube[3][1][2] = cubeT[1][1][2]
@@ -50,14 +57,21 @@ def rotate(side,ccc):
             cube[1][0][2] = cubeT[6][0][2]  #White from Blue
             cube[1][1][2] = cubeT[6][1][2]
             cube[1][2][2] = cubeT[6][2][2]
-            cube[2] = [list(row) for row in zip(*cubeT[2])][::-1]
+            cube[2][2][0] = cubeT[2][0][0]  #Red from Red
+            cube[2][1][0] = cubeT[2][0][1]
+            cube[2][0][0] = cubeT[2][0][2]
+            cube[2][2][1] = cubeT[2][1][0]
+            cube[2][1][1] = cubeT[2][1][2]
+            cube[2][2][2] = cubeT[2][2][0]
+            cube[2][1][2] = cubeT[2][2][1]
+            cube[2][0][2] = cubeT[2][2][2]
 
     colors = {
         'W': 'white',
         'R': 'red',
         'G': 'green',
         'Y': 'yellow',
-        'O': 'orange',
+        'O': "#ff7300",
         'B': 'blue'
     }
     for face, id in display.items():
@@ -78,12 +92,12 @@ def rotate(side,ccc):
                 if dt == 1:
                     source_col = 2 - col
                 else:
-                    source_col = col
+                    source_col = -3 + col
                 colr = colors[cube[face][row][source_col]]
                 if dt == 1:
                     canvas.itemconfig(id[row * 3 + col], fill=colr)
                 if dt == 2:
-                    canvas.itemconfig(id[row * -3 + col], fill=colr)
+                    canvas.itemconfig(id[row * 3 + col], fill=colr)
 
 
 def dtswitch():
