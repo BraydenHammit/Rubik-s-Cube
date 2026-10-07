@@ -2,20 +2,75 @@ import copy as c
 
 def rotate(side,ccc,canvas,cube,display,dt):
     cubeT = c.deepcopy(cube)
+    if side == 1:
+        if ccc == 'c':
+            cube[3][0][0] = cubeT[2][0][0]  #Green from Red
+            cube[3][0][1] = cubeT[2][0][1]
+            cube[3][0][2] = cubeT[2][0][2]
+
+            cube[5][0][0] = cubeT[3][0][0]  #Orange from Green
+            cube[5][0][1] = cubeT[3][0][1]
+            cube[5][0][2] = cubeT[3][0][2]
+
+            cube[6][0][0] = cubeT[5][0][0]  #Blue from Orange
+            cube[6][0][1] = cubeT[5][0][1]
+            cube[6][0][2] = cubeT[5][0][2]
+
+            cube[2][0][0] = cubeT[6][0][0]  #Red from Blue
+            cube[2][0][1] = cubeT[6][0][1]
+            cube[2][0][2] = cubeT[6][0][2]
+
+            cube[1][0][0] = cubeT[1][2][0]  #White from White
+            cube[1][0][1] = cubeT[1][1][0]
+            cube[1][0][2] = cubeT[1][0][0]
+            cube[1][1][0] = cubeT[1][2][1]
+            cube[1][1][2] = cubeT[1][0][1]
+            cube[1][2][0] = cubeT[1][2][2]
+            cube[1][2][1] = cubeT[1][1][2]
+            cube[1][2][2] = cubeT[1][0][2]
+        if ccc == 'cc':
+            cube[2][0][0] = cubeT[3][0][0]  #Red from Green
+            cube[2][0][1] = cubeT[3][0][1]
+            cube[2][0][2] = cubeT[3][0][2]
+
+            cube[3][0][0] = cubeT[5][0][0]  #Green from Orange
+            cube[3][0][1] = cubeT[5][0][1]
+            cube[3][0][2] = cubeT[5][0][2]
+
+            cube[5][0][0] = cubeT[6][0][0]  #Orange from Blue
+            cube[5][0][1] = cubeT[6][0][1]
+            cube[5][0][2] = cubeT[6][0][2]
+
+            cube[6][0][0] = cubeT[2][0][0]  #Blue from Red
+            cube[6][0][1] = cubeT[2][0][1]
+            cube[6][0][2] = cubeT[2][0][2]
+
+            cube[1][0][0] = cubeT[1][0][2]  #White from White
+            cube[1][0][1] = cubeT[1][1][2]
+            cube[1][0][2] = cubeT[1][2][2]
+            cube[1][1][0] = cubeT[1][0][1]
+            cube[1][1][2] = cubeT[1][2][1]
+            cube[1][2][0] = cubeT[1][0][0]
+            cube[1][2][1] = cubeT[1][1][0]
+            cube[1][2][2] = cubeT[1][2][0]
     if side == 2:
         if ccc == 'c':
             cube[1][0][2] = cubeT[3][0][2]  #White from Green
             cube[1][1][2] = cubeT[3][1][2]
             cube[1][2][2] = cubeT[3][2][2]
+
             cube[3][0][2] = cubeT[4][0][2]  #Green from Yellow
             cube[3][1][2] = cubeT[4][1][2]
             cube[3][2][2] = cubeT[4][2][2]
+
             cube[4][0][2] = cubeT[6][0][2]  #Yellow from Blue
             cube[4][1][2] = cubeT[6][1][2]
             cube[4][2][2] = cubeT[6][2][2]
+
             cube[6][0][2] = cubeT[1][0][2]  #Blue from White
             cube[6][1][2] = cubeT[1][1][2]
             cube[6][2][2] = cubeT[1][2][2]
+
             cube[2][0][0] = cubeT[2][2][0]  #Red from Red
             cube[2][0][1] = cubeT[2][1][0]
             cube[2][0][2] = cubeT[2][0][0]
@@ -28,15 +83,19 @@ def rotate(side,ccc,canvas,cube,display,dt):
             cube[3][0][2] = cubeT[1][0][2]  #Green from White
             cube[3][1][2] = cubeT[1][1][2]
             cube[3][2][2] = cubeT[1][2][2]
+
             cube[4][0][2] = cubeT[3][0][2]  #Yellow from Green
             cube[4][1][2] = cubeT[3][1][2]
             cube[4][2][2] = cubeT[3][2][2]
+
             cube[6][0][2] = cubeT[4][0][2]  #Blue from Yellow
             cube[6][1][2] = cubeT[4][1][2]
             cube[6][2][2] = cubeT[4][2][2]
+
             cube[1][0][2] = cubeT[6][0][2]  #White from Blue
             cube[1][1][2] = cubeT[6][1][2]
             cube[1][2][2] = cubeT[6][2][2]
+
             cube[2][2][0] = cubeT[2][0][0]  #Red from Red
             cube[2][1][0] = cubeT[2][0][1]
             cube[2][0][0] = cubeT[2][0][2]

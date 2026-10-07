@@ -35,6 +35,8 @@ def shuffle():
         rotate(ran.randint(1, 6),ran.choice(['c', 'cc']),canvas,cube,display,dt)
 
 rotate(None,None,canvas,cube,display,dt)
-root.bind('<q>', lambda event:rotate(2,'cc',canvas,cube,display,dt))
-root.bind('<w>', lambda event:rotate(2,'c',canvas,cube,display,dt))
+root.bind('<q>', lambda event:rotate(1,'c',canvas,cube,display,dt))
+root.bind('<w>', lambda event:rotate(1,'cc',canvas,cube,display,dt))
+root.bind('<a>', lambda event:rotate(2,'c',canvas,cube,display,dt))
+root.bind('<s>', lambda event:rotate(2,'cc',canvas,cube,display,dt))
 root.mainloop()
