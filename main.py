@@ -14,12 +14,14 @@ cube = {
 
 root = tk.Tk()
 root.title("Rubik's Cube")
-root.geometry('400x300')
+root.geometry('600x400')
 canvas = tk.Canvas(root)
 display = rectangles(canvas)
 switchbutton = tk.Button(root, text="Flip", command=lambda: dtswitch())
+shufflebutton = tk.Button(root, text='Shuffle', command=lambda: shuffle())
 canvas.pack()
 switchbutton.pack(pady=10)
+shufflebutton.pack(pady=10)
 dt = 1
 
 def dtswitch():
