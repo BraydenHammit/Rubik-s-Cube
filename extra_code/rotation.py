@@ -28,7 +28,7 @@ def rotate(side,ccc,canvas,cube,display,dt):
             cube[1][2][0] = cubeT[1][2][2]
             cube[1][2][1] = cubeT[1][1][2]
             cube[1][2][2] = cubeT[1][0][2]
-            
+
         if ccc == 'cc':
             cube[2][0][0] = cubeT[3][0][0]  #Red from Green
             cube[2][0][1] = cubeT[3][0][1]
@@ -160,6 +160,61 @@ def rotate(side,ccc,canvas,cube,display,dt):
             cube[3][2][0] = cubeT[3][0][0]
             cube[3][2][1] = cubeT[3][1][0]
             cube[3][2][2] = cubeT[3][2][0]
+
+    if side == 4:
+        if ccc == 'c':
+            cube[6][0][2] = cubeT[2][2][0]  #Blue from Red
+            cube[6][0][1] = cubeT[2][2][1]
+            cube[6][0][0] = cubeT[2][2][2]
+
+            cube[2][2][0] = cubeT[3][2][0]  #Red from Green
+            cube[2][2][1] = cubeT[3][2][1]
+            cube[2][2][2] = cubeT[3][2][2]
+
+            cube[3][2][2] = cubeT[5][0][0]  #Green from Orange
+            cube[3][2][1] = cubeT[5][0][1]
+            cube[3][2][0] = cubeT[5][0][2]
+
+            cube[5][0][0] = cubeT[6][0][0]  #Orange from Blue
+            cube[5][0][1] = cubeT[6][0][1]
+            cube[5][0][2] = cubeT[6][0][2]
+
+            cube[4][0][2] = cubeT[4][0][0]  #Yellow from Yellow
+            cube[4][1][2] = cubeT[4][0][1]
+            cube[4][2][2] = cubeT[4][0][2]
+            cube[4][0][1] = cubeT[4][1][0]
+            cube[4][1][1] = cubeT[4][1][1]
+            cube[4][2][1] = cubeT[4][1][2]
+            cube[4][0][0] = cubeT[4][2][0]
+            cube[4][1][0] = cubeT[4][2][1]
+            cube[4][2][0] = cubeT[4][2][2]
+
+        if ccc == 'cc':
+            cube[2][2][0] = cubeT[6][0][2]  #Red from Blue
+            cube[2][2][1] = cubeT[6][0][1]
+            cube[2][2][2] = cubeT[6][0][0]
+
+            cube[3][2][0] = cubeT[2][2][0]  #Green from Red
+            cube[3][2][1] = cubeT[2][2][1]
+            cube[3][2][2] = cubeT[2][2][2]
+
+            cube[5][0][0] = cubeT[3][2][2]  #Orange from Green
+            cube[5][0][1] = cubeT[3][2][1]
+            cube[5][0][2] = cubeT[3][2][0]
+
+            cube[6][0][0] = cubeT[5][0][0]  #Blue from Orange
+            cube[6][0][1] = cubeT[5][0][1]
+            cube[6][0][2] = cubeT[5][0][2]
+
+            cube[4][0][0] = cubeT[4][0][2]  #Yellow from Yellow
+            cube[4][0][1] = cubeT[4][1][2]
+            cube[4][0][2] = cubeT[4][2][2]
+            cube[4][1][0] = cubeT[4][0][1]
+            cube[4][1][1] = cubeT[4][1][1]
+            cube[4][1][2] = cubeT[4][2][1]
+            cube[4][2][0] = cubeT[4][0][0]
+            cube[4][2][1] = cubeT[4][1][0]
+            cube[4][2][2] = cubeT[4][2][0]
 
 
 
