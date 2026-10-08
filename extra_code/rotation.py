@@ -1,6 +1,85 @@
 import copy as c
 
-def rotate(side,ccc,canvas,cube,display,dt):
+def rotate(btn,canvas,cube,display,dt,shuffle=False):
+    side = None
+    ccc = None
+    if shuffle != False:
+        side, btn = shuffle[0], shuffle[1]
+    else:
+        if dt==1:
+            if btn==1:
+                side=1
+                ccc = 'c'
+            elif btn==2:
+                side=1
+                ccc = 'cc'
+            elif btn==3:
+                side=2
+                ccc = 'c'
+            elif btn==4:
+                side=2
+                ccc = 'cc'
+            elif btn==5:
+                side=3
+                ccc = 'c'
+            elif btn==6:
+                side=3
+                ccc = 'cc'
+            elif btn==7:
+                side=4
+                ccc = 'c'
+            elif btn==8:    
+                side=4
+                ccc = 'cc'
+            elif btn==9:
+                side=5
+                ccc = 'c'
+            elif btn==10:
+                side=5
+                ccc = 'cc'
+            elif btn==11:
+                side=6
+                ccc = 'c'
+            elif btn==12:
+                side=6
+                ccc = 'cc'
+        elif dt==2:
+            if btn==1:
+                side=4
+                ccc = 'c'
+            elif btn==2:
+                side=4
+                ccc = 'cc'
+            elif btn==3:
+                side=5
+                ccc = 'c'
+            elif btn==4:
+                side=5
+                ccc = 'cc'
+            elif btn==5:
+                side=6
+                ccc = 'c'
+            elif btn==6:
+                side=6
+                ccc = 'cc'
+            elif btn==7:
+                side=1
+                ccc = 'c'
+            elif btn==8:    
+                side=1
+                ccc = 'cc'
+            elif btn==9:
+                side=2
+                ccc = 'c'
+            elif btn==10:
+                side=2
+                ccc = 'cc'
+            elif btn==11:  
+                side=3
+                ccc = 'c'
+            elif btn==12:
+                side=3
+                ccc = 'cc'
     cubeT = c.deepcopy(cube)
     if side == 1:
         if ccc == 'c':

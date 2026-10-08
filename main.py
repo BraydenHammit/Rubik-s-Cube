@@ -17,12 +17,18 @@ root.title("Rubik's Cube")
 root.geometry('600x400')
 canvas = tk.Canvas(root)
 display = rectangles(canvas)
+canvas.create_window(45, 90, window=tk.Button(root, text="<", width=1, height=1, bg='gray40', activebackground='gray30', font=(None, 10), command=lambda: rotate(1, canvas, cube, display, dt)))
+canvas.create_window(275, 90, window=tk.Button(root, text=">", width=1, height=1, bg='gray40', activebackground='gray30', font=(None, 10), command=lambda: rotate(2, canvas, cube, display, dt)))
+canvas.create_window(45, 150, window=tk.Button(root, text="<", width=1, height=1, bg='gray40', activebackground='gray30', font=(None, 10), command=lambda: rotate(8, canvas, cube, display, dt)))
+canvas.create_window(275, 150, window=tk.Button(root, text=">", width=1, height=1, bg='gray40', activebackground='gray30', font=(None, 10), command=lambda: rotate(7, canvas, cube, display, dt)))
+
+dt = 1
 switchbutton = tk.Button(root, text="Flip", command=lambda: dtswitch())
 shufflebutton = tk.Button(root, text='Shuffle', command=lambda: shuffle())
-canvas.pack()
+
+canvas.pack(pady=10)
 switchbutton.pack(pady=10)
 shufflebutton.pack(pady=10)
-dt = 1
 
 def dtswitch():
     global dt
@@ -30,23 +36,11 @@ def dtswitch():
         dt = 2
     elif dt == 2:
         dt = 1
-    rotate(None,None,canvas,cube,display,dt)
+    rotate(None,canvas,cube,display,dt)
 
 def shuffle():
     for _ in range(100):
-        rotate(ran.randint(1, 6),ran.choice(['c', 'cc']),canvas,cube,display,dt)
+        rotate(0,canvas,cube,display,dt,shuffle=[ran.randint(1, 6), ran.choice(['c', 'cc'])])
 
-rotate(None,None,canvas,cube,display,dt)
-root.bind('<q>', lambda event:rotate(1,'c',canvas,cube,display,dt))
-root.bind('<Q>', lambda event:rotate(1,'cc',canvas,cube,display,dt))
-root.bind('<a>', lambda event:rotate(2,'c',canvas,cube,display,dt))
-root.bind('<A>', lambda event:rotate(2,'cc',canvas,cube,display,dt))
-root.bind('<w>', lambda event:rotate(3,'c',canvas,cube,display,dt))
-root.bind('<W>', lambda event:rotate(3,'cc',canvas,cube,display,dt))
-root.bind('<s>', lambda event:rotate(4,'c',canvas,cube,display,dt))
-root.bind('<S>', lambda event:rotate(4,'cc',canvas,cube,display,dt))
-root.bind('<e>', lambda event:rotate(5,'c',canvas,cube,display,dt))
-root.bind('<E>', lambda event:rotate(5,'cc',canvas,cube,display,dt))
-root.bind('<d>', lambda event:rotate(6,'c',canvas,cube,display,dt))
-root.bind('<D>', lambda event:rotate(6,'cc',canvas,cube,display,dt))
+rotate(None,canvas,cube,display,dt)
 root.mainloop()
