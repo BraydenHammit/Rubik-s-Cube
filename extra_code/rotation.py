@@ -110,13 +110,13 @@ def rotate(side,ccc,canvas,cube,display,dt):
             cube[2][1][0] = cubeT[1][2][1]
             cube[2][2][0] = cubeT[1][2][2]
 
-            cube[4][0][0] = cubeT[2][0][0]  #Yellow from Red
+            cube[4][0][2] = cubeT[2][0][0]  #Yellow from Red
             cube[4][0][1] = cubeT[2][1][0]
-            cube[4][0][2] = cubeT[2][2][0]
+            cube[4][0][0] = cubeT[2][2][0]
 
-            cube[5][0][0] = cubeT[4][0][0]  #Orange from Yellow
+            cube[5][0][0] = cubeT[4][0][2]  #Orange from Yellow
             cube[5][1][0] = cubeT[4][0][1]
-            cube[5][2][0] = cubeT[4][0][2]
+            cube[5][2][0] = cubeT[4][0][0]
 
             cube[1][2][0] = cubeT[5][0][0]  #White from Orange
             cube[1][2][1] = cubeT[5][1][0]
@@ -135,13 +135,13 @@ def rotate(side,ccc,canvas,cube,display,dt):
             cube[1][2][1] = cubeT[2][1][0]
             cube[1][2][2] = cubeT[2][2][0]
 
-            cube[2][0][0] = cubeT[4][0][0]  #Red from Yellow
+            cube[2][0][0] = cubeT[4][0][2]  #Red from Yellow
             cube[2][1][0] = cubeT[4][0][1]
-            cube[2][2][0] = cubeT[4][0][2]
+            cube[2][2][0] = cubeT[4][0][0]
 
-            cube[4][0][0] = cubeT[5][0][0]  #Yellow from Orange
+            cube[4][0][2] = cubeT[5][0][0]  #Yellow from Orange
             cube[4][0][1] = cubeT[5][1][0]
-            cube[4][0][2] = cubeT[5][2][0]
+            cube[4][0][0] = cubeT[5][2][0]
 
             cube[5][0][0] = cubeT[1][2][0]  #Orange from White
             cube[5][1][0] = cubeT[1][2][1]
