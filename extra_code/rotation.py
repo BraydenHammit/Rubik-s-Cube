@@ -75,10 +75,10 @@ def rotate(btn,canvas,cube,display,dt,shuffle=False):
                 side=3
                 ccc = 'cc'
             elif btn==11:  
-                side=3
+                side=2
                 ccc = 'c'
             elif btn==12:
-                side=3
+                side=2
                 ccc = 'cc'
     cubeT = c.deepcopy(cube)
     if side == 1:
