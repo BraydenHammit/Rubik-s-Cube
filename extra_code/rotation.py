@@ -69,10 +69,10 @@ def rotate(btn,canvas,cube,display,dt,shuffle=False):
                 side=1
                 ccc = 'cc'
             elif btn==9:
-                side=2
+                side=3
                 ccc = 'c'
             elif btn==10:
-                side=2
+                side=3
                 ccc = 'cc'
             elif btn==11:  
                 side=3
