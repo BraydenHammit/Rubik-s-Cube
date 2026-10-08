@@ -4,7 +4,7 @@ def rotate(btn,canvas,cube,display,dt,shuffle=False):
     side = None
     ccc = None
     if shuffle != False:
-        side, btn = shuffle[0], shuffle[1]
+        side, ccc = shuffle[0], shuffle[1]
     else:
         if dt==1:
             if btn==1:

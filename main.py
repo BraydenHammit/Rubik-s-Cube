@@ -25,6 +25,10 @@ canvas.create_window(130, 220, window=tk.Button(root, text="↙", width=1, heigh
 canvas.create_window(250, 50, window=tk.Button(root, text="↗", width=1, height=1, bg='gray40', activebackground='gray30', font=(None, 10), command=lambda: rotate(3, canvas, cube, display, dt)))
 canvas.create_window(190, 20, window=tk.Button(root, text="↗", width=1, height=1, bg='gray40', activebackground='gray30', font=(None, 10), command=lambda: rotate(10, canvas, cube, display, dt)))
 canvas.create_window(70, 190, window=tk.Button(root, text="↙", width=1, height=1, bg='gray40', activebackground='gray30', font=(None, 10), command=lambda: rotate(9, canvas, cube, display, dt)))
+canvas.create_window(190, 220,  window=tk.Button(root, text="↘", width=1, height=1, bg='gray40', activebackground='gray30', font=(None, 10), command=lambda: rotate(5, canvas, cube, display, dt)))
+canvas.create_window(70, 50, window=tk.Button(root, text="↖", width=1, height=1, bg='gray40', activebackground='gray30', font=(None, 10), command=lambda: rotate(6, canvas, cube, display, dt)))
+canvas.create_window(130, 20, window=tk.Button(root, text="↖", width=1, height=1, bg='gray40', activebackground='gray30', font=(None, 10), command=lambda: rotate(11, canvas, cube, display, dt)))
+canvas.create_window(250, 190, window=tk.Button(root, text="↘", width=1, height=1, bg='gray40', activebackground='gray30', font=(None, 10), command=lambda: rotate(12, canvas, cube, display, dt)))
 
 dt = 1
 switchbutton = tk.Button(root, text="Flip", command=lambda: dtswitch())
